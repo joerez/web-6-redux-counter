@@ -25,3 +25,15 @@ button:active {
   color: white;
   border-color: red;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  padding: .6rem;
+  text-align: center;
+}

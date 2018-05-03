@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { incrementCounter, decreaseCounter, resetCounter } from '../actions';
+import { incrementCounter, decreaseCounter, incrementByCounter, decrementByCounter, resetCounter } from '../actions';
 
 class Counter extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      incrementForm : 5,
+      decrementForm : 5
+    }
+  }
+  // component state amount
 
   render() {
     return (
@@ -22,6 +30,30 @@ class Counter extends Component {
           this.props.resetCounter();
         }}>Reset</button>
 
+        <form>
+          {/* value should be set by state onchange should update state */}
+          <input value={this.state.incrementForm} onChange={(e) => {
+            this.setState({incrementForm : Number(e.target.value)})
+          }} name="number" />
+
+          <button onClick={(e) => {
+            e.preventDefault()
+            this.props.incrementByCounter(this.state.incrementForm);
+          }}>Up by blank</button>
+        </form>
+
+
+        <form>
+          <input value={this.state.decrementForm} onChange={(e) => {
+            console.log(Number(e.target.value));
+            this.setState({decrementForm : Number(e.target.value)})
+          }} name="number2" />
+
+          <button onClick={(e) => {
+            e.preventDefault()
+            this.props.decrementByCounter(this.state.decrementForm);
+          }}>Down by blank</button>
+        </form>
 
 
       </div>
@@ -35,7 +67,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = () => {
-  return { incrementCounter, decreaseCounter, resetCounter }
+  return { incrementCounter, decreaseCounter, incrementByCounter, decrementByCounter, resetCounter }
 }
 
 // export default connect(mapStateToProps)(Counter);

@@ -1,4 +1,4 @@
-import { INCREMENT, DECREASE, RESET, incrementCounter } from '../actions'
+import { INCREMENT, DECREASE, RESET, INCREMENTBY, DECREMENTBY, incrementCounter } from '../actions'
 
                         //provide initial value here
 const counterReducer = (state = 0, action) => {
@@ -12,6 +12,12 @@ const counterReducer = (state = 0, action) => {
     case RESET:
       const newstate3 = 0
       return newstate3
+    case INCREMENTBY:
+      const newState4 = state + action.payload.number
+      return newState4
+    case DECREMENTBY:
+      const newState5 = state - action.payload.subNumber
+      return newState5
     default:
       return state
   }
