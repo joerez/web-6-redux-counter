@@ -17,7 +17,7 @@ const counterReducer = (state = 0, action) => {
       return newState4
     case DECREMENTBY:
       const newState5 = state - action.payload.subNumber
-      return newState5
+      return newState5  
     default:
       return state
   }
