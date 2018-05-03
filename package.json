@@ -1,5 +1,5 @@
 {
-  "name": "wthr",
+  "name": "web-6-redux-counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
