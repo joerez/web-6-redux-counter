@@ -11,9 +11,17 @@ button {
   margin: 0.5em;
   background-color: #fff;
   border-radius: 0.5em;
+  transition: all 200ms;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #000;
+  border-color: blue;
 }
 
 button:active {
-  color: #fff;
-  background-color: #000;
+  background: blue;
+  color: white;
+  border-color: red;
 }
